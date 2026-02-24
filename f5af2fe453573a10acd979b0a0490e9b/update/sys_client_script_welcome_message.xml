@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_client_script">
+    <sys_client_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Client script to show welcome message when incident form loads</description>
+        <field_name/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Welcome Message On Load</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    // Show welcome info message when the incident form loads
+    var msg = 'Welcome to Incident Enhancement! Let\'s gear up for a ride....!';
+    
+    try {
+        // Use ServiceNow's info message instead of alert for better UX
+        g_form.addInfoMessage(msg);
+        
+        // Alternative: Use GlideModal for a more polished welcome
+        /*
+        var modal = new GlideModal('glide_alert_standard', false, 500);
+        modal.setTitle('Welcome!');
+        modal.setBody(msg);
+        modal.render();
+        */
+        
+    } catch (e) {
+        // Fallback to standard alert if info message fails
+        alert(msg);
+    }
+}]]></script>
+        <sys_class_name>sys_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-24 16:04:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>welcome_script_client_id</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Welcome Message On Load</sys_name>
+        <sys_package display_value="Incident Enhancement" source="x_1925335_incide_0">f5af2fe453573a10acd979b0a0490e9b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Incident Enhancement">f5af2fe453573a10acd979b0a0490e9b</sys_scope>
+        <sys_update_name>sys_client_script_welcome_message</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-24 16:04:00</sys_updated_on>
+        <table>x_1925335_incide_0_custom_incs</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_client_script>
+</record_update>
